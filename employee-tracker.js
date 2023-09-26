@@ -96,20 +96,21 @@ function viewAllRoles() {
         console.table(results);
         startApp();
     });
+}
 function viewAllEmployees() {
-        // Ask the database to fetch all employees.
-        db.query('SELECT * FROM employee', (err, results) => {
-            if (err) {
-                console.error('Error fetching employees: ' + err.message);
-                startApp();
-                return;
-            }
-            console.log('All Employees: ');
-            console.table(results);
+    // Ask the database to fetch all employees.
+    db.query('SELECT * FROM employee', (err, results) => {
+        if (err) {
+            console.error('Error fetching employees: ' + err.message);
             startApp();
+            return;
+            }
+        console.log('All Employees: ');
+        console.table(results);
+        startApp();
         });
     }
-}
+
 function addDept() {
     inquirer
         .prompt({
